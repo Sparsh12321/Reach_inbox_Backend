@@ -1,6 +1,6 @@
 const { Client } = require("@elastic/elasticsearch");
 
-const client = new Client({
+const esClient = new Client({
   node: process.env.ELASTIC_URL,
   auth: {
     apiKey: process.env.ELASTIC_API
@@ -39,4 +39,4 @@ async function ensureIndex() {
 // Immediately ensure index on import
 ensureIndex().catch((err) => console.error("❌ Elasticsearch index setup failed:", err));
 
-module.exports = client;
+module.exports = esClient;
