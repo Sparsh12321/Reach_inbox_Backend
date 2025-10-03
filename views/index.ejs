@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emails</title>
+</head>
+<body>
+  <h1>Inbox</h1>
+  <% emails.forEach(email => { %>
+    <div class="email">
+      <h3><%= email.subject %></h3>
+      <p>From: <%= email.from %></p>
+      <p>Date: <%= new Date(email.date).toLocaleString() %></p>
+      <div class="email-body">
+        <%- email.body %>  <!-- 👈 use <%- %> to render raw HTML -->
+      </div>
+      <hr>
+    </div>
+  <% }) %>
+</body>
+</html>
