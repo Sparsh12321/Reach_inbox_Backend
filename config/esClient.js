@@ -39,4 +39,4 @@ async function ensureIndex() {
 // Immediately ensure index on import
 ensureIndex().catch((err) => console.error("❌ Elasticsearch index setup failed:", err));
 
-module.exports = esClient;
+module.exports = client;
